@@ -214,13 +214,16 @@ struct rsa_sigver_data {
 struct rsa_signature_primitive_data {
 	struct buffer msg;
 	struct buffer n;
+	struct buffer e;
 	struct buffer d;
-#if 0
+#if 1
 	union {
 		struct rsa_regular {
 			struct buffer d;
 		} rsa_regular;
 		struct rsa_crt {
+			struct buffer p;
+			struct buffer q;
 			struct buffer dmp1;
 			struct buffer dmq1;
 			struct buffer iqmp;
